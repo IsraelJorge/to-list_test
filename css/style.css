@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: darkgrey;
+    font-family: 'Poppins', sans-serif;
+}
+
+main{
+    height: 90%;
+    width: 500px;
+}
+
+.container{
+    margin-bottom: 10px;
+    background-color: cadetblue;
+    padding: 30px 20px;
+    border-radius: 5px;
+}
+
+.container-adicionar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    color: antiquewhite;
+}
+
+.container-adicionar input[type="text"]{
+    border-radius: 10px;
+    padding: 5px;
+    height: 20px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+}
+
+.container-adicionar #adicionar{
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    border: none;
+    cursor: pointer;
+}
+
+.container-tarefas{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    background-color: aquamarine;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.tarefa{
+    display: flex;
+    align-items: center;
+}
+
+.tarefa input[type="checkbox"]{
+    margin-right: 5px;
+    width: 30px;
+    height: 17px;
+}
+
+.tarefa input[type="checkbox"]:checked ~ p {
+    text-decoration: line-through;
+}
+
+
+
+@media(max-width: 600px){
+    main{
+        height: 90%;
+        width: 400px;
+    }
+}

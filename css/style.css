@@ -6,24 +6,41 @@
     padding: 0;
 }
 
+:root{
+    --cor-backgrond: #8F85FF;
+    --cor-container: #16678D;
+    --cor-tarefa-item: #66da6f;
+}
+
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: darkgrey;
+    background-color: var(--cor-backgrond);
     font-family: 'Poppins', sans-serif;
 }
 
 main{
     height: 90%;
     width: 500px;
+    
+}
+
+main h1{
+    text-align: center;
+    margin-bottom: 5px;
+    color: #061A23;
 }
 
 .container{
-    margin-bottom: 10px;
-    background-color: cadetblue;
+    background-color: var(--cor-container);
     padding: 30px 20px;
+    border-radius: 5px;
+}
+
+.container-externo{
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
     border-radius: 5px;
 }
 
@@ -31,17 +48,22 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 500;
-    color: antiquewhite;
 }
 
 .container-adicionar input[type="text"]{
+    width: 300px;
+    height: 25px;
+    font-weight: 500;
     border-radius: 10px;
     padding: 5px;
-    height: 20px;
     border: none;
     outline: none;
     margin-right: 10px;
+    
+}
+
+.container-adicionar input[type="text"]:focus{
+    border: 2px solid #3cad89;
 }
 
 .container-adicionar #adicionar{
@@ -50,15 +72,32 @@ main{
     height: 35px;
     border: none;
     cursor: pointer;
+    background-color: #3cad89;
+    color: #fff;
+    transition: .4s ease-in-out;
+}
+
+.container-adicionar #adicionar:hover{
+    background-color: #307e65;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+
+.containe-task{
+    background-color: var(--cor-container);
+    padding: 30px 20px;
+    border-radius: 5px;
+    margin-top: -8px;
 }
 
 .container-tarefas{
     height: 50px;
     display: flex;
     align-items: center;
-    background-color: aquamarine;
+    background-color: var(--cor-tarefa-item);
     border-radius: 10px;
     margin-bottom: 10px;
+    font-weight: 500;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
 .tarefa{

@@ -1,28 +1,55 @@
 const btnAdicionar = document.querySelector('#adicionar');
-const arrayTarefas = []
+const tarefaInput = document.querySelector('#add');
+const containeTask = document.querySelector('.containe-task');
 
 btnAdicionar.addEventListener('click', () => {
-    const tarefaInput = document.querySelector('#add');
-    let containeTask = document.querySelector('.containe-task');
-
-
-    if (tarefaInput.value.length == 0) {
+    
+    if (tarefaInput.value.length === 0) {
         return window.alert('Preencha o campo de tarefas antes de adicionar!!!');
     }
+    
+    const tarefa = tarefaInput.value;
 
-    let containerTarefas = document.createElement('div');
-    containerTarefas.setAttribute('class', 'container-tarefas');
+    const novaTarefa = criarItemTarefa(tarefa);
 
-    containerTarefas.innerHTML += `
+    containeTask.appendChild(novaTarefa);
+
+    limparInput(tarefaInput);
+});
+
+tarefaInput.addEventListener('keypress', (e) => {
+    
+    if (e.keyCode == 13) {
+        
+        if (tarefaInput.value.length === 0) {
+            return window.alert('Preencha o campo de tarefas antes de adicionar!!!');
+        }
+        
+        const tarefa = tarefaInput.value;
+    
+        const novaTarefa = criarItemTarefa(tarefa);
+    
+        containeTask.appendChild(novaTarefa);
+    
+        limparInput(tarefaInput);
+    }
+});
+
+
+const criarItemTarefa = (tarefa) => {
+    const div = document.createElement('div');
+    div.classList.add('container-tarefas');
+    
+    div.innerHTML += `
     <label for="checkbox" class="tarefa">
         <input type="checkbox" name="">
-        <p> ${tarefaInput.value} </p> 
+        <p> ${tarefa} </p> 
     </label>`;
 
-    arrayTarefas.push(tarefaInput.value);
+    return div;
+}
 
-    containeTask.appendChild(containerTarefas);
-
-    tarefaInput.value = '';
-    tarefaInput.focus();
-});
+const limparInput = (input) => {
+    input.value = '';
+    input.focus();
+}

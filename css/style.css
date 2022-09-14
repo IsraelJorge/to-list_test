@@ -6,6 +6,7 @@
     padding: 0;
 }
 
+
 :root{
     --cor-backgrond: #8F85FF;
     --cor-container: #16678D;
@@ -89,7 +90,7 @@ main h1{
     margin-top: -8px;
 }
 
-.container-tarefas{
+.item-tarefa{
     height: 50px;
     display: flex;
     align-items: center;
@@ -100,19 +101,38 @@ main h1{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
-.tarefa{
+li{
     display: flex;
     align-items: center;
+    position: relative;
 }
 
-.tarefa input[type="checkbox"]{
+li input[type="checkbox"]{
     margin-right: 5px;
     width: 30px;
     height: 17px;
 }
 
-.tarefa input[type="checkbox"]:checked ~ p {
+li input[type="checkbox"]:checked ~ p {
     text-decoration: line-through;
+}
+
+.btnRemover{
+    width: 28px;
+    height: 28px;
+    color: #fff;
+    font-weight: bolder;
+    position: absolute;
+    left: 410px;
+    
+    border-radius: 50%;
+    border: none;
+    background-color: #dd7373;
+    transition: 1s ease-in-out;
+}
+
+.btnRemover:hover{
+    background-color:#e72d2d;
 }
 
 

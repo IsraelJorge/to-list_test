@@ -14,6 +14,8 @@ btnAdicionar.addEventListener('click', () => {
 
     containeTask.appendChild(novaTarefa);
 
+    removerItem(containeTask, novaTarefa);
+
     limparInput(tarefaInput);
 });
 
@@ -30,6 +32,8 @@ tarefaInput.addEventListener('keypress', (e) => {
         const novaTarefa = criarItemTarefa(tarefa);
     
         containeTask.appendChild(novaTarefa);
+
+        removerItem(containeTask, novaTarefa);
     
         limparInput(tarefaInput);
     }
@@ -37,16 +41,29 @@ tarefaInput.addEventListener('keypress', (e) => {
 
 
 const criarItemTarefa = (tarefa) => {
-    const div = document.createElement('div');
-    div.classList.add('container-tarefas');
+    const li = document.createElement('li');
+    li.classList.add('item-tarefa');
     
-    div.innerHTML += `
-    <label for="checkbox" class="tarefa">
+    li.innerHTML += `
         <input type="checkbox" name="">
         <p> ${tarefa} </p> 
-    </label>`;
+    `;
 
-    return div;
+    return li;
+}
+
+const removerItem = (containeTask, novaTarefa) => {
+    
+    let remover = document.createElement("button");
+    remover.classList.add("btnRemover");
+    remover.innerHTML = "X";
+    
+    remover.onclick = function () {
+        containeTask.removeChild(novaTarefa);
+        containeTask.removeChild(remover);
+    }
+
+    novaTarefa.appendChild(remover);
 }
 
 const limparInput = (input) => {

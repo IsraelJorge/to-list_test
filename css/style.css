@@ -101,11 +101,11 @@ main h1{
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
-li{
-    display: flex;
-    align-items: center;
-    position: relative;
+.item-tarefa > p{
+    display: block;
+    width: 83%;
 }
+
 
 li input[type="checkbox"]{
     margin-right: 5px;
@@ -122,9 +122,6 @@ li input[type="checkbox"]:checked ~ p {
     height: 28px;
     color: #fff;
     font-weight: bolder;
-    position: absolute;
-    left: 410px;
-    
     border-radius: 50%;
     border: none;
     background-color: #dd7373;
@@ -141,5 +138,9 @@ li input[type="checkbox"]:checked ~ p {
     main{
         height: 90%;
         width: 400px;
+    }
+
+    .item-tarefa > p{
+        width: 80%;
     }
 }

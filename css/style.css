@@ -91,7 +91,7 @@ main h1{
 }
 
 .item-tarefa{
-    height: 50px;
+    min-height: 50px;
     display: flex;
     align-items: center;
     background-color: var(--cor-tarefa-item);
